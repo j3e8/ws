@@ -36,3 +36,15 @@ div#output {
   font-family: monospace;
   line-height: 21px;
 }
+
+.word {
+  margin: 2px 0;
+  padding: 4px 10px;
+  border-radius: 3px;
+  background-color: #fff;
+  cursor: default;
+  transition: 0.3s;
+}
+.word:hover {
+  background-color: #f2f2e8;
+}

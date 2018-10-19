@@ -13,8 +13,8 @@
       <textarea ng-model="wordSearchStr"></textarea>
       <div id="buttons"><button ng-click="go()">&gt;</button></div>
       <div id="output">
-        <div ng-repeat="word in wordsFound track by $index">
-          {{ word }}
+        <div class="word" ng-repeat="found in wordsFound track by $index" ng-mouseover="highlightWord(found)">
+          {{ found.word }}
         </div>
       </div>
     </div>

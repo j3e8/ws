@@ -11,8 +11,11 @@ angular.module('WS').controller('mainController', function($scope, Trie) {
   $scope.go = function() {
     $scope.wordsFound = [];
     var grid = parseGrid($scope.wordSearchStr);
-    console.log(grid);
     $scope.wordsFound = search(grid, wordTrie);
+  }
+
+  $scope.highlightWord = function(foundWord) {
+    
   }
 
   function parseGrid(ws) {
@@ -58,7 +61,11 @@ angular.module('WS').controller('mainController', function($scope, Trie) {
         break;
       }
       if (Trie.isWord(prefix, wl)) {
-        found.push(prefix);
+        found.push({
+          word: prefix,
+          start: { x: x - prefix.length * xi, y: y - prefix.length * yi },
+          end: { x: x, y: y }
+        });
       }
       x += xi;
       y += yi;
